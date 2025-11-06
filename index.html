@@ -1,361 +1,180 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Bento Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allen Rianzares | Web Developer Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #f8f9fa;
+      }
+      a {
+        text-decoration: none;
+      }
+      header {
+        text-align: center;
+        padding: 80px 20px 50px;
+      }
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid #00d4ff;
+        object-fit: cover;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+      }
+      header h1 {
+        font-weight: 700;
+        font-size: 2.8rem;
+        margin-top: 20px;
+      }
+      header p {
+        color: #bcd0d6;
+        font-size: 1.1rem;
+      }
+      .social-icons a {
+        color: #00d4ff;
+        font-size: 1.6rem;
+        margin: 0 12px;
+        transition: 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: #fff;
+        transform: translateY(-5px);
+      }
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 30px;
+      }
+      .bento-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .bento-card:hover {
+        transform: translateY(-8px);
+        background: rgba(0, 212, 255, 0.15);
+        box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+      }
+      .bento-card h3 {
+        font-size: 1.4rem;
+        color: #00d4ff;
+        margin-bottom: 10px;
+      }
+      .bento-card p {
+        color: #e2e6ea;
+        font-size: 0.95rem;
+      }
+      .bento-card .btn {
+        border-radius: 25px;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+      }
+      .bento-card .btn-outline-light:hover {
+        background-color: #00d4ff;
+        color: #000;
+      }
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
-    .bento {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-    .card {
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    .card img {
-      object-fit: cover;
-      height: 150px;
-      width: 100%;
-    }
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.8rem;aaaaa
-      font-weight: bold;
-      color: #222;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
-    }
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
-    .btn-custom {
-      border-radius: 30px;
-      padding: 10px 20px;
-      transition: all 0.3s;
-    }
-    .btn-custom:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    .social-icons a {
-      font-size: 1.5rem;
-      margin: 0 10px;
-      color: #555;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .social-icons a:hover {
-      color: #0d6efd;
-      transform: translateY(-5px);
-    }
-  </style>
-</head>
-<body>
-
-  <section class="hero container-fluid bg-light">
-    <div class="container">
-      <img src="myphoto.jpg" alt="My Photo" class="profile-pic mb-3">
-      <h1>Hi, I'm Allen </h1>
-      <p>
-        I'm a beginner web developer and designer who loves building creative digital experiences.   
-        This portfolio showcases my projects, skills, and journey as a developer.
-      </p>
-      <div class="social-icons">
-        <a href="#"><i class="bi bi-github"></i></a>
+  <body>
+    <header>
+      <img src="myphoto.jpg" alt="Profile Picture" class="profile-pic" />
+      <h1>Allen Rianzares</h1>
+      <p>Beginner Web Developer | UI/UX Designer |</p>
+      <div class="social-icons mt-3">
+        <a href="https://github.com/Allen04-Rianzares" target="_blank"
+          ><i class="bi bi-github"></i
+        ></a>
         <a href="#"><i class="bi bi-linkedin"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-envelope"></i></a>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <section class="bento container-fluid">
-    <div class="card bg-light text-dark text-center">
-      <div class="card-body">
-        <h3 class="card-title">About Me</h3>
+    <section class="bento-grid">
+      <div class="bento-card">
+        <h3><i class="bi bi-person-lines-fill"></i> About Me</h3>
         <p>
-          Hi, I’m Allen Rianzares.  
-          I love coding, design, and exploring creative projects.  
-          Just like this bunny, I’m curious and always learning new things.
+          I’m a web developer passionate about crafting user-focused and
+          responsive web experiences using clean code and modern design.
         </p>
-        <button class="btn btn-primary btn-custom">Read More</button>
+        <a href="#" class="btn btn-outline-light">Learn More</a>
       </div>
-    </div>
 
-    <div class="card bg-success text-white text-center">
-      <div class="card-body">
-        <h3 class="card-title">Skills</h3>
-        <ul class="list-unstyled">
-          <li>🌐 HTML, CSS, JavaScript</li>
-          <li>🐍 Python</li>
-          <li>🎨 UI/UX Design</li>
-        </ul>
-        <button class="btn btn-light btn-custom">View Skills</button>
+      <div class="bento-card">
+        <h3><i class="bi bi-code-slash"></i> Skills</h3>
+        <p>HTML • Python • Figma</p>
+        <a href="#" class="btn btn-outline-light">View Skills</a>
       </div>
-    </div>
 
-    <div class="card bg-warning text-center">
-      <div class="card-body">
-        <h3 class="card-title">Projects</h3>
-        <p>Check out my work on GitHub.</p>
-        <button class="btn btn-dark btn-custom" data-bs-toggle="modal" data-bs-target="#projectsModal">View Projects</button>
-      </div>
-    </div>
-
-    <div class="card bg-danger text-white text-center">
-      <div class="card-body">
-        <h3 class="card-title">Contact</h3>
-        <p>Email me at: <br><strong>allen@example.com</strong></p>
-        <a href="mailto:allen@example.com" class="btn btn-light btn-custom">Send Email</a>
-      </div>
-    </div>
-
-    <div class="card text-center">
-      <img src="https://via.placeholder.com/300x150" alt="Sample Project">
-      <div class="card-body">
-        <h3 class="card-title">Gallery</h3>
-        <p>A showcase of my designs and artwork.</p>
-        <button class="btn btn-info text-white btn-custom">View Gallery</button>
-      </div>
-    </div>
-
-    <div class="card bg-info text-white text-center">
-      <div class="card-body">
-        <h3 class="card-title">Blog</h3>
-        <p>Sharing my thoughts on tech, design, and coding.</p>
-        <button class="btn btn-light btn-custom">Read Blog</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal for Projects -->
-  <div class="modal fade" id="projectsModal" tabindex="-1" aria-labelledby="projectsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="projectsModalLabel">My Projects</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-        
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Bento Portfolio</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
-    .bento {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-    .card {
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    .card img {
-      object-fit: cover;
-      height: 150px;
-      width: 100%;
-    }
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: bold;
-      color: #222;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
-    }
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
-    .btn-custom {
-      border-radius: 30px;
-      padding: 10px 20px;
-      transition: all 0.3s;
-    }
-    .btn-custom:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    .social-icons a {
-      font-size: 1.5rem;
-      margin: 0 10px;
-      color: #555;
-      transition: color 0.3s, transform 0.3s;
-    }
-    .social-icons a:hover {
-      color: #0d6efd;
-      transform: translateY(-5px);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Hero Section -->
-  <section class="hero container-fluid bg-light">
-    <div class="container">
-      <img src="https://images.unsplash.com/photo-1548767797-d8f0b18f9888?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Your Photo" class="profile-pic mb-3">
-      <h1>Hi, I'm Allen 👋</h1>
-      <p>
-        I'm a beginner web developer and designer who loves building creative digital experiences.   
-        This portfolio showcases my projects, skills, and journey as a developer.
-      </p>
-      <div class="social-icons">
-        <a href="#"><i class="bi bi-github"></i></a>
-        <a href="#"><i class="bi bi-linkedin"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bento Grid -->
-  <section class="bento container-fluid">
-    <div class="card bg-light text-dark text-center">
-      <div class="card-body">
-        <h3 class="card-title">About Me</h3>
+      <div class="bento-card">
+        <h3><i class="bi bi-folder2-open"></i> Activities</h3>
         <p>
-          Hi, I’m Allen Rianzares.  
-          I love coding, design, and exploring creative projects.  
-          Just like this bunny, I’m curious and always learning new things.
+          Explore my latest activities and projects on GitHub, showcasing web
+          apps and creative designs.
         </p>
-        <button class="btn btn-primary btn-custom">Read More</button>
+        <a
+           href="activities.html" class="btn btn-outline-light">View Activities</a>
+
+          >View Activities</a
+        >
       </div>
-    </div>
 
-    <div class="card bg-success text-white text-center">
-      <div class="card-body">
-        <h3 class="card-title">Skills</h3>
-        <ul class="list-unstyled">
-          <li>🌐 HTML, CSS, JavaScript</li>
-          <li>🐍 Python</li>
-          <li>🎨 UI/UX Design</li>
-        </ul>
-        <button class="btn btn-light btn-custom">View Skills</button>
+      <div class="bento-card">
+        <h3><i class="bi bi-images"></i> Gallery</h3>
+        <p>
+          A visual collection of my creative works — web designs, artworks, and
+          concepts.
+        </p>
+        <a href="gallery.html" class="btn btn-outline-light">View Gallery</a>
       </div>
-    </div>
 
-    <div class="card bg-warning text-center">
-      <div class="card-body">
-        <h3 class="card-title">Projects</h3>
-        <p>Check out my work on GitHub.</p>
-        <button class="btn btn-dark btn-custom" data-bs-toggle="modal" data-bs-target="#projectsModal">View Projects</button>
+      <div class="bento-card">
+        <h3><i class="bi bi-journal-text"></i> Blog</h3>
+        <p>
+          Insights and tutorials about front-end development, design, and tech
+          trends.
+        </p>
+        <a href="#" class="btn btn-outline-light">Read Blog</a>
       </div>
-    </div>
 
-    <div class="card bg-danger text-white text-center">
-      <div class="card-body">
-        <h3 class="card-title">Contact</h3>
-        <p>Email me at: <br><strong>allen@example.com</strong></p>
-        <a href="mailto:allen@example.com" class="btn btn-light btn-custom">Send Email</a>
+      <div class="bento-card">
+        <h3><i class="bi bi-envelope-paper"></i> Contact</h3>
+        <p>
+          Let's collaborate or chat about your next project!<br /><strong
+            >allen@example.com</strong
+          >
+        </p>
+        <a href="mailto:allen@example.com" class="btn btn-outline-light"
+          >Send Email</a
+        >
       </div>
-    </div>
+    </section>
 
-    <div class="card text-center">
-      <img src="https://via.placeholder.com/300x150" alt="Sample Project">
-      <div class="card-body">
-        <h3 class="card-title">Gallery</h3>
-        <p>A showcase of my designs and artwork.</p>
-        <button class="btn btn-info text-white btn-custom">View Gallery</button>
-      </div>
-    </div>
-
-    <div class="card bg-info text-white text-center">
-      <div class="card-body">
-        <h3 class="card-title">Blog</h3>
-        <p>Sharing my thoughts on tech, design, and coding.</p>
-        <button class="btn btn-light btn-custom">Read Blog</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal for Projects -->
-  <div class="modal fade" id="projectsModal" tabindex="-1" aria-labelledby="projectsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="projectsModalLabel">My Projects</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p>Here you can display your projects with links, screenshots, or even a carousel of work samples.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
->>>>>>> 10d55be2babaee8ffc212f833679c7e0e841f3c2
