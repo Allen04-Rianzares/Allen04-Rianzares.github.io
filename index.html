@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+```html
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Allen Rianzares | Web Developer Portfolio</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
   </head>
+
   <body
     style="
-      font-family: 'Poppins', sans-serif;
+      font-family: &quot;Poppins&quot;, sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #f8f9fa;
       margin: 0;
@@ -30,6 +34,7 @@
       />
 
       <h1 class="fw-bold mt-4 fs-1">Allen Rianzares</h1>
+
       <p class="text-secondary small">
         Beginner Web Developer | UI/UX Designer
       </p>
@@ -38,144 +43,355 @@
         <a
           href="https://github.com/Allen04-Rianzares"
           target="_blank"
-          class="text-info fs-3 mx-2 transition"
-          onmouseover="this.style.color='#fff'; this.style.transform='translateY(-5px)'"
-          onmouseout="this.style.color='#00d4ff'; this.style.transform='none'"
-          ><i class="bi bi-github"></i
-        ></a>
+          class="text-info fs-3 mx-2"
+          onmouseover="
+            this.style.color = '#fff';
+            this.style.transform = 'translateY(-5px)';
+          "
+          onmouseout="
+            this.style.color = '#00d4ff';
+            this.style.transform = 'none';
+          "
+        >
+          <i class="bi bi-github"></i>
+        </a>
+
         <a
           href="#"
-          class="text-info fs-3 mx-2 transition"
-          onmouseover="this.style.color='#fff'; this.style.transform='translateY(-5px)'"
-          onmouseout="this.style.color='#00d4ff'; this.style.transform='none'"
-          ><i class="bi bi-linkedin"></i
-        ></a>
+          class="text-info fs-3 mx-2"
+          onmouseover="
+            this.style.color = '#fff';
+            this.style.transform = 'translateY(-5px)';
+          "
+          onmouseout="
+            this.style.color = '#00d4ff';
+            this.style.transform = 'none';
+          "
+        >
+          <i class="bi bi-linkedin"></i>
+        </a>
+
         <a
-          href="#"
-          class="text-info fs-3 mx-2 transition"
-          onmouseover="this.style.color='#fff'; this.style.transform='translateY(-5px)'"
-          onmouseout="this.style.color='#00d4ff'; this.style.transform='none'"
-          ><i class="bi bi-envelope"></i
-        ></a>
+          href="mailto:allencurucho@gmail.com"
+          class="text-info fs-3 mx-2"
+          onmouseover="
+            this.style.color = '#fff';
+            this.style.transform = 'translateY(-5px)';
+          "
+          onmouseout="
+            this.style.color = '#00d4ff';
+            this.style.transform = 'none';
+          "
+        >
+          <i class="bi bi-envelope"></i>
+        </a>
       </div>
     </div>
 
     <div class="container py-5">
       <div class="row g-4">
+        <!-- ABOUT ME -->
         <div class="col-md-4">
           <div
             class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
             style="
               background: rgba(255, 255, 255, 0.08);
               backdrop-filter: blur(10px);
+              transition: 0.3s;
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-8px)';
+              this.style.background = 'rgba(0,212,255,0.12)';
+              this.style.boxShadow = '0 0 25px rgba(0,212,255,0.2)';
+            "
+            onmouseout="
+              this.style.transform = 'none';
+              this.style.background = 'rgba(255,255,255,0.08)';
+              this.style.boxShadow = 'none';
             "
           >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-person-lines-fill"></i> About Me
-            </h3>
-            <p class="text-secondary small mb-2">
-              I’m a web developer passionate about crafting user-focused and
-              responsive web experiences.
+            <div
+              class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="
+                width: 70px;
+                height: 70px;
+                background: rgba(0, 212, 255, 0.12);
+                border: 1px solid rgba(0, 212, 255, 0.4);
+              "
+            >
+              <i class="bi bi-person-lines-fill text-info fs-2"></i>
+            </div>
+
+            <p class="text-info text-uppercase small fw-bold mb-1">
+              Get to know me
             </p>
-            <a class="btn btn-outline-light rounded-pill">Learn More</a>
+
+            <h3 class="text-info fw-bold mb-3">About Me</h3>
+
+            <p class="text-secondary small mb-4">
+              I’m a web developer passionate about crafting user-focused,
+              responsive, and visually engaging web experiences.
+            </p>
+
+            <a
+              href="about.html"
+              class="btn btn-outline-light rounded-pill px-4"
+            >
+              Learn More <i class="bi bi-arrow-right ms-1"></i>
+            </a>
           </div>
         </div>
 
+        <!-- SKILLS -->
         <div class="col-md-4">
           <div
             class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
             style="
               background: rgba(255, 255, 255, 0.08);
               backdrop-filter: blur(10px);
+              transition: 0.3s;
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-8px)';
+              this.style.background = 'rgba(0,212,255,0.12)';
+              this.style.boxShadow = '0 0 25px rgba(0,212,255,0.2)';
+            "
+            onmouseout="
+              this.style.transform = 'none';
+              this.style.background = 'rgba(255,255,255,0.08)';
+              this.style.boxShadow = 'none';
             "
           >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-code-slash"></i> Skills
-            </h3>
-            <p class="text-secondary small mb-2">HTML • Python • Figma</p>
-            <a class="btn btn-outline-light rounded-pill">View Skills</a>
+            <div
+              class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="
+                width: 70px;
+                height: 70px;
+                background: rgba(0, 212, 255, 0.12);
+                border: 1px solid rgba(0, 212, 255, 0.4);
+              "
+            >
+              <i class="bi bi-code-slash text-info fs-2"></i>
+            </div>
+
+            <p class="text-info text-uppercase small fw-bold mb-1">
+              What I can do
+            </p>
+
+            <h3 class="text-info fw-bold mb-3">Skills</h3>
+
+            <p class="text-secondary small mb-4">
+              HTML • CSS • JavaScript • Python • Bootstrap • UI/UX
+            </p>
+
+            <a
+              href="skills.html"
+              class="btn btn-outline-light rounded-pill px-4"
+            >
+              View Skills <i class="bi bi-arrow-right ms-1"></i>
+            </a>
           </div>
         </div>
 
+        <!-- ACTIVITIES -->
         <div class="col-md-4">
           <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25 transition"
+            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
             style="
               background: rgba(255, 255, 255, 0.08);
               backdrop-filter: blur(10px);
+              transition: 0.3s;
             "
-            onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(0,212,255,0.15)'; this.style.boxShadow='0 0 25px rgba(0,212,255,0.2)'"
-            onmouseout="this.style.transform='none'; this.style.background='rgba(255,255,255,0.08)'; this.style.boxShadow='none'"
+            onmouseover="
+              this.style.transform = 'translateY(-8px)';
+              this.style.background = 'rgba(0,212,255,0.15)';
+              this.style.boxShadow = '0 0 25px rgba(0,212,255,0.2)';
+            "
+            onmouseout="
+              this.style.transform = 'none';
+              this.style.background = 'rgba(255,255,255,0.08)';
+              this.style.boxShadow = 'none';
+            "
           >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-folder2-open"></i> Activities
-            </h3>
-            <p class="text-secondary small mb-2">
+            <div
+              class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="
+                width: 70px;
+                height: 70px;
+                background: rgba(0, 212, 255, 0.12);
+                border: 1px solid rgba(0, 212, 255, 0.4);
+              "
+            >
+              <i class="bi bi-folder2-open text-info fs-2"></i>
+            </div>
+
+            <p class="text-info text-uppercase small fw-bold mb-1">
+              My projects
+            </p>
+
+            <h3 class="text-info fw-bold mb-3">Activities</h3>
+
+            <p class="text-secondary small mb-4">
               Explore my latest activities and projects on GitHub.
             </p>
-            <a href="activities.html" class="btn btn-outline-light rounded-pill"
-              >View Activities</a
-            >
-          </div>
-        </div>
 
-        <div class="col-md-4">
-          <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25 transition"
-            style="
-              background: rgba(255, 255, 255, 0.08);
-              backdrop-filter: blur(10px);
-            "
-            onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(0,212,255,0.15)'; this.style.boxShadow='0 0 25px rgba(0,212,255,0.2)'"
-            onmouseout="this.style.transform='none'; this.style.background='rgba(255,255,255,0.08)'; this.style.boxShadow='none'"
-          >
-            <h3 class="text-info mb-2"><i class="bi bi-images"></i> Gallery</h3>
-            <p class="text-secondary small mb-2">
-              A visual collection of my creative works.
-            </p>
-            <a href="gallery.html" class="btn btn-outline-light rounded-pill"
-              >View Gallery</a
-            >
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
-            style="
-              background: rgba(255, 255, 255, 0.08);
-              backdrop-filter: blur(10px);
-            "
-          >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-journal-text"></i> Blog
-            </h3>
-            <p class="text-secondary small mb-2">
-              Insights and tutorials about development and design.
-            </p>
-            <a class="btn btn-outline-light rounded-pill">Read Blog</a>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
-            style="
-              background: rgba(255, 255, 255, 0.08);
-              backdrop-filter: blur(10px);
-            "
-          >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-envelope-paper"></i> Contact
-            </h3>
-            <p class="text-secondary small mb-2">
-              Let's collaborate!<br /><strong>allen@example.com</strong>
-            </p>
             <a
-              href="mailto:allen@example.com"
-              class="btn btn-outline-light rounded-pill"
-              >Send Email</a
+              href="activities.html"
+              class="btn btn-outline-light rounded-pill px-4"
             >
+              View Activities <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="col-md-4">
+          <div
+            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
+            style="
+              background: rgba(255, 255, 255, 0.08);
+              backdrop-filter: blur(10px);
+              transition: 0.3s;
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-8px)';
+              this.style.background = 'rgba(0,212,255,0.15)';
+              this.style.boxShadow = '0 0 25px rgba(0,212,255,0.2)';
+            "
+            onmouseout="
+              this.style.transform = 'none';
+              this.style.background = 'rgba(255,255,255,0.08)';
+              this.style.boxShadow = 'none';
+            "
+          >
+            <div
+              class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="
+                width: 70px;
+                height: 70px;
+                background: rgba(0, 212, 255, 0.12);
+                border: 1px solid rgba(0, 212, 255, 0.4);
+              "
+            >
+              <i class="bi bi-images text-info fs-2"></i>
+            </div>
+
+            <p class="text-info text-uppercase small fw-bold mb-1">
+              My creative work
+            </p>
+
+            <h3 class="text-info fw-bold mb-3">Gallery</h3>
+
+            <p class="text-secondary small mb-4">
+              A visual collection of my creative works and designs.
+            </p>
+
+            <a
+              href="gallery.html"
+              class="btn btn-outline-light rounded-pill px-4"
+            >
+              View Gallery <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- BLOG -->
+        <div class="col-md-4">
+          <div
+            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
+            style="
+              background: rgba(255, 255, 255, 0.08);
+              backdrop-filter: blur(10px);
+              transition: 0.3s;
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-8px)';
+              this.style.background = 'rgba(0,212,255,0.12)';
+              this.style.boxShadow = '0 0 25px rgba(0,212,255,0.2)';
+            "
+            onmouseout="
+              this.style.transform = 'none';
+              this.style.background = 'rgba(255,255,255,0.08)';
+              this.style.boxShadow = 'none';
+            "
+          >
+            <div
+              class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="
+                width: 70px;
+                height: 70px;
+                background: rgba(0, 212, 255, 0.12);
+                border: 1px solid rgba(0, 212, 255, 0.4);
+              "
+            >
+              <i class="bi bi-journal-text text-info fs-2"></i>
+            </div>
+
+            <p class="text-info text-uppercase small fw-bold mb-1">
+              My thoughts
+            </p>
+
+            <h3 class="text-info fw-bold mb-3">Blog</h3>
+
+            <p class="text-secondary small mb-4">
+              Insights, tutorials, experiences, and things I learn while
+              developing websites.
+            </p>
+
+            <a href="blog.html" class="btn btn-outline-light rounded-pill px-4">
+              Read Blog <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="col-md-4">
+          <div
+            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25"
+            style="
+              background: rgba(255, 255, 255, 0.08);
+              backdrop-filter: blur(10px);
+              transition: 0.3s;
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-8px)';
+              this.style.background = 'rgba(0,212,255,0.12)';
+              this.style.boxShadow = '0 0 25px rgba(0,212,255,0.2)';
+            "
+            onmouseout="
+              this.style.transform = 'none';
+              this.style.background = 'rgba(255,255,255,0.08)';
+              this.style.boxShadow = 'none';
+            "
+          >
+            <div
+              class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="
+                width: 70px;
+                height: 70px;
+                background: rgba(0, 212, 255, 0.12);
+                border: 1px solid rgba(0, 212, 255, 0.4);
+              "
+            >
+              <i class="bi bi-envelope-paper text-info fs-2"></i>
+            </div>
+
+            <p class="text-info text-uppercase small fw-bold mb-1">
+              Let's connect
+            </p>
+
+            <h3 class="text-info fw-bold mb-3">Contact</h3>
+
+            <p class="text-secondary small mb-4">
+              Have a project, question, or idea? Feel free to get in touch.
+            </p>
+
+            <a
+              href="contact.html"
+              class="btn btn-outline-light rounded-pill px-4"
+            >
+              Contact Me <i class="bi bi-arrow-right ms-1"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -184,3 +400,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+```
