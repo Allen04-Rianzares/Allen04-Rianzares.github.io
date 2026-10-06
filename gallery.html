@@ -1,58 +1,956 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Gallery | Allen Rianzares</title>
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Bootstrap Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-  </head>
-  <body
-    class="bg-dark text-light"
-    style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364)"
-  >
-    <div class="container text-center py-5">
-      <h1 class="text-info fw-bold mb-2">My Works Gallery</h1>
-      <a href="index.html" class="btn btn-outline-light mt-2"
-        >Back to Portfolio</a
-      >
-    </div>
 
-    <div class="container py-5">
-      <div class="row g-4 justify-content-center" id="content"></div>
-    </div>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <script>
-      var content = document.getElementById("content");
-      var works = [
-        { img: "iphone.jpg", title: "Activity 4 (Iphone 13)" },
-        { img: "biodome.jpg", title: "Activity 5 (Biodome)" },
-        { img: "snakes.jpg", title: "Activity 6 (Snakes)" },
-        { img: "dragonball.png", title: "Activity 7 (DragonBall)" },
-      ];
-
-      for (var i = 0; i < works.length; i++) {
-        content.innerHTML +=
-          '<div class="col-6 col-md-4 col-lg-3">' +
-          '<div class="overflow-hidden rounded-4 bg-white bg-opacity-10 text-center p-3" style="transition:0.4s" ' +
-          "onmouseover=\"this.style.transform='translateY(-8px)'; this.style.background='rgba(0,212,255,0.15)'\" " +
-          "onmouseout=\"this.style.transform='none'; this.style.background='rgba(255,255,255,0.08)'\">" +
-          '<img src="' +
-          works[i].img +
-          '" class="w-100" style="height:200px; object-fit:cover" />' +
-          '<h5 class="text-info p-2 mb-0">' +
-          works[i].title +
-          "</h5>" +
-          "</div>" +
-          "</div>";
+    <style>
+      :root {
+        --bg: #071321;
+        --bg-soft: #0b1b2d;
+        --card: rgba(255, 255, 255, 0.045);
+        --border: rgba(255, 255, 255, 0.1);
+        --text: #f5f7fa;
+        --muted: #9aa9b8;
+        --accent: #38bdf8;
+        --accent-2: #60a5fa;
       }
-    </script>
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+
+        font-family: "Inter", sans-serif;
+
+        background:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(56, 189, 248, 0.1),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(96, 165, 250, 0.08),
+            transparent 30%
+          ),
+          var(--bg);
+
+        color: var(--text);
+
+        min-height: 100vh;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .brand {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* =========================
+       NAVIGATION
+    ========================= */
+
+      .navbar {
+        background: rgba(7, 19, 33, 0.82);
+
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .brand {
+        color: #fff;
+
+        font-size: 1.2rem;
+
+        font-weight: 800;
+
+        letter-spacing: -0.5px;
+      }
+
+      .brand span {
+        color: var(--accent);
+      }
+
+      .nav-link {
+        color: #aebdca !important;
+
+        font-weight: 500;
+
+        margin: 0 7px;
+
+        transition: 0.25s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: #fff !important;
+      }
+
+      .nav-cta {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+        color: #06111d !important;
+
+        font-weight: 700;
+
+        padding: 10px 18px !important;
+
+        border-radius: 999px;
+
+        margin-left: 10px;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-2px);
+
+        box-shadow: 0 10px 25px rgba(56, 189, 248, 0.18);
+      }
+
+      /* =========================
+       HERO
+    ========================= */
+
+      .hero {
+        padding: 120px 0 70px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        color: var(--accent);
+
+        font-size: 0.78rem;
+
+        font-weight: 800;
+
+        text-transform: uppercase;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 22px;
+      }
+
+      .eyebrow::before {
+        content: "";
+
+        width: 28px;
+
+        height: 1px;
+
+        background: var(--accent);
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 7vw, 6.5rem);
+
+        line-height: 0.95;
+
+        letter-spacing: -4px;
+
+        max-width: 950px;
+
+        margin-bottom: 28px;
+      }
+
+      .hero h1 span {
+        background: linear-gradient(90deg, #fff, #7dd3fc);
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        color: var(--muted);
+
+        max-width: 680px;
+
+        font-size: 1.08rem;
+
+        line-height: 1.8;
+      }
+
+      /* =========================
+       SECTION
+    ========================= */
+
+      .gallery-section {
+        padding-bottom: 110px;
+      }
+
+      .section-label {
+        color: var(--accent);
+
+        font-size: 0.75rem;
+
+        font-weight: 800;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+
+        letter-spacing: -2px;
+
+        margin-bottom: 15px;
+      }
+
+      .section-description {
+        color: var(--muted);
+
+        max-width: 650px;
+
+        line-height: 1.8;
+
+        margin-bottom: 45px;
+      }
+
+      /* =========================
+       GALLERY CARD
+    ========================= */
+
+      .gallery-card {
+        position: relative;
+
+        height: 100%;
+
+        overflow: hidden;
+
+        border: 1px solid var(--border);
+
+        border-radius: 24px;
+
+        background: var(--card);
+
+        transition: 0.35s ease;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-8px);
+
+        border-color: rgba(56, 189, 248, 0.3);
+
+        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.25);
+      }
+
+      /* =========================
+       IMAGE
+    ========================= */
+
+      .gallery-image {
+        position: relative;
+
+        width: 100%;
+
+        height: 270px;
+
+        overflow: hidden;
+
+        background: #0b1b2d;
+      }
+
+      .gallery-image img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+
+        transition: 0.5s ease;
+      }
+
+      .gallery-card:hover .gallery-image img {
+        transform: scale(1.06);
+      }
+
+      /* =========================
+       IMAGE OVERLAY
+    ========================= */
+
+      .image-overlay {
+        position: absolute;
+
+        inset: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        background: rgba(7, 19, 33, 0.55);
+
+        opacity: 0;
+
+        transition: 0.3s ease;
+      }
+
+      .gallery-card:hover .image-overlay {
+        opacity: 1;
+      }
+
+      .view-icon {
+        width: 55px;
+        height: 55px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+        color: #06111d;
+
+        font-size: 1.2rem;
+      }
+
+      /* =========================
+       CARD CONTENT
+    ========================= */
+
+      .gallery-content {
+        padding: 27px;
+      }
+
+      .project-number {
+        color: #687b8e;
+
+        font-size: 0.72rem;
+
+        font-weight: 700;
+
+        text-transform: uppercase;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 10px;
+      }
+
+      .gallery-content h3 {
+        font-size: 1.35rem;
+
+        line-height: 1.35;
+
+        margin-bottom: 12px;
+
+        color: #fff;
+      }
+
+      .gallery-content p {
+        color: var(--muted);
+
+        font-size: 0.93rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+      }
+
+      /* =========================
+       TAG
+    ========================= */
+
+      .project-tag {
+        display: inline-block;
+
+        padding: 7px 12px;
+
+        border-radius: 999px;
+
+        background: rgba(56, 189, 248, 0.08);
+
+        border: 1px solid rgba(56, 189, 248, 0.14);
+
+        color: #8edcff;
+
+        font-size: 0.72rem;
+
+        font-weight: 600;
+
+        margin-right: 5px;
+
+        margin-bottom: 5px;
+      }
+
+      /* =========================
+       PROJECT LINK
+    ========================= */
+
+      .project-link {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        margin-top: 20px;
+
+        color: #dce9f3;
+
+        font-size: 0.88rem;
+
+        font-weight: 700;
+
+        transition: 0.25s ease;
+      }
+
+      .project-link:hover {
+        color: var(--accent);
+
+        gap: 11px;
+      }
+
+      /* =========================
+       CTA
+    ========================= */
+
+      .cta-section {
+        padding: 10px 0 110px;
+      }
+
+      .cta-box {
+        text-align: center;
+
+        padding: 70px 30px;
+
+        border-radius: 30px;
+
+        border: 1px solid rgba(56, 189, 248, 0.18);
+
+        background:
+          radial-gradient(
+            circle at center,
+            rgba(56, 189, 248, 0.1),
+            transparent 60%
+          ),
+          rgba(255, 255, 255, 0.025);
+      }
+
+      .cta-box h2 {
+        font-size: clamp(2.2rem, 5vw, 4rem);
+
+        letter-spacing: -2px;
+
+        margin-bottom: 18px;
+      }
+
+      .cta-box p {
+        color: var(--muted);
+
+        max-width: 600px;
+
+        margin: 0 auto 30px;
+
+        line-height: 1.8;
+      }
+
+      .btn-primary-custom {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 13px 23px;
+
+        border-radius: 999px;
+
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+        color: #06111d;
+
+        font-weight: 800;
+
+        transition: 0.25s ease;
+      }
+
+      .btn-primary-custom:hover {
+        color: #06111d;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+      }
+
+      /* =========================
+       FOOTER
+    ========================= */
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+        padding: 30px 0;
+
+        color: #728394;
+
+        font-size: 0.9rem;
+      }
+
+      .footer-link {
+        color: #9aacbc;
+
+        transition: 0.2s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--accent);
+      }
+
+      /* =========================
+       RESPONSIVE
+    ========================= */
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 90px 0 55px;
+        }
+
+        .hero h1 {
+          letter-spacing: -2px;
+        }
+
+        .gallery-image {
+          height: 230px;
+        }
+
+        .gallery-content {
+          padding: 24px;
+        }
+
+        .cta-section {
+          padding-bottom: 80px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+     NAVIGATION
+========================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container py-2">
+        <a class="navbar-brand brand" href="index.html">
+          Allen<span>.</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"> Home </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"> About </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="activities.html"> Activities </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="skills.html"> Skills </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html"> Blog </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="gallery.html"> Gallery </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link nav-cta" href="contact.html">
+                Let's Work Together
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Selected Work</div>
+
+        <h1>
+          A closer look at
+          <span>what I've built.</span>
+        </h1>
+
+        <p>
+          A visual collection of projects and activities I've worked on while
+          developing my skills in web development, design, programming, and
+          digital technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+     GALLERY
+========================= -->
+
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-label">Project Gallery</div>
+
+        <h2 class="section-title">Recent work &amp; activities.</h2>
+
+        <p class="section-description">
+          Explore some of my recent projects. Each project represents hands-on
+          practice and the continuous development of my technical and creative
+          skills.
+        </p>
+
+        <div class="row g-4">
+          <!-- =========================
+           IPHONE PROJECT
+      ========================= -->
+
+          <div class="col-md-6 col-lg-6">
+            <article class="gallery-card">
+              <div class="gallery-image">
+                <img src="iphone.jpg" alt="iPhone 13 webpage project" />
+
+                <div class="image-overlay">
+                  <a
+                    href="https://allen04-rianzares.github.io/Allen04-Rianzares.github/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-icon"
+                    aria-label="View iPhone project"
+                  >
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="gallery-content">
+                <div class="project-number">Activity 04</div>
+
+                <h3>iPhone 13 Webpage</h3>
+
+                <p>
+                  A responsive webpage project focused on presenting product
+                  information through a structured and visually organized
+                  interface.
+                </p>
+
+                <span class="project-tag"> HTML </span>
+
+                <span class="project-tag"> CSS </span>
+
+                <span class="project-tag"> Web Design </span>
+
+                <br />
+
+                <a
+                  href="https://allen04-rianzares.github.io/Allen04-Rianzares.github/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  View Project
+
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- =========================
+           BIODOME PROJECT
+      ========================= -->
+
+          <div class="col-md-6 col-lg-6">
+            <article class="gallery-card">
+              <div class="gallery-image">
+                <img src="biodome.jpg" alt="Biodome project" />
+
+                <div class="image-overlay">
+                  <a
+                    href="https://allen04-rianzares.github.io/Biodome/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-icon"
+                    aria-label="View Biodome project"
+                  >
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="gallery-content">
+                <div class="project-number">Activity 05</div>
+
+                <h3>Biodome Project</h3>
+
+                <p>
+                  A web project built around a biodome concept, combining
+                  structured content with visual presentation and interactive
+                  web elements.
+                </p>
+
+                <span class="project-tag"> HTML </span>
+
+                <span class="project-tag"> CSS </span>
+
+                <span class="project-tag"> Web Development </span>
+
+                <br />
+
+                <a
+                  href="https://allen04-rianzares.github.io/Biodome/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  View Project
+
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- =========================
+           SNAKE PROJECT
+      ========================= -->
+
+          <div class="col-md-6 col-lg-6">
+            <article class="gallery-card">
+              <div class="gallery-image">
+                <img src="snake.jpg" alt="Philippine snakes gallery project" />
+
+                <div class="image-overlay">
+                  <a
+                    href="https://allen04-rianzares.github.io/Activity_6/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-icon"
+                    aria-label="View snake project"
+                  >
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="gallery-content">
+                <div class="project-number">Activity 06</div>
+
+                <h3>Philippine Snakes Gallery</h3>
+
+                <p>
+                  A gallery-style project designed to organize and present
+                  information using images, structured layouts, and a visual
+                  browsing experience.
+                </p>
+
+                <span class="project-tag"> HTML </span>
+
+                <span class="project-tag"> CSS </span>
+
+                <span class="project-tag"> Gallery </span>
+
+                <br />
+
+                <a
+                  href="https://allen04-rianzares.github.io/Activity_6/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  View Project
+
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- =========================
+           DRAGON BALL PROJECT
+      ========================= -->
+
+          <div class="col-md-6 col-lg-6">
+            <article class="gallery-card">
+              <div class="gallery-image">
+                <img src="dragonball.png" alt="Dragon Ball API project" />
+
+                <div class="image-overlay">
+                  <a
+                    href="https://allen04-rianzares.github.io/Activity_7-API-/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="view-icon"
+                    aria-label="View Dragon Ball project"
+                  >
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="gallery-content">
+                <div class="project-number">Activity 07</div>
+
+                <h3>Dragon Ball API Gallery</h3>
+
+                <p>
+                  An API-based project that demonstrates how external data can
+                  be retrieved and displayed dynamically through a web
+                  interface.
+                </p>
+
+                <span class="project-tag"> JavaScript </span>
+
+                <span class="project-tag"> API </span>
+
+                <span class="project-tag"> Dynamic Data </span>
+
+                <br />
+
+                <a
+                  href="https://allen04-rianzares.github.io/Activity_7-API-/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  View Project
+
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     CTA
+========================= -->
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div class="section-label">More Than Projects</div>
+
+          <h2>Let's build something useful.</h2>
+
+          <p>
+            These projects are part of my continued learning and development.
+            I'm always interested in applying my skills to practical projects,
+            business needs, and new challenges.
+          </p>
+
+          <a href="contact.html" class="btn-primary-custom">
+            Let's Work Together
+
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"
+        >
+          <div>© 2024 Allen Rianzares. All rights reserved.</div>
+
+          <div class="d-flex gap-4">
+            <a
+              href="https://github.com/Allen04-Rianzares"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-link"
+            >
+              <i class="bi bi-github me-1"></i>
+
+              GitHub
+            </a>
+
+            <a href="mailto:allencurucho@gmail.com" class="footer-link">
+              <i class="bi bi-envelope me-1"></i>
+
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>

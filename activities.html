@@ -1,129 +1,1024 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Activities | Allen Rianzares</title>
+
+    <title>Activities & Projects | Allen Rianzares</title>
+
+    <meta
+      name="description"
+      content="Explore Allen Rianzares' web development projects, activities, and digital work."
+    />
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Bootstrap Icons -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
-  </head>
-  <body class="bg-dark text-light">
-    <div class="container text-center py-5">
-      <h1 class="text-info fw-bold mb-2">My Activities</h1>
-      <p class="mb-0">Here are my GitHub projects and web activities.</p>
-    </div>
 
-    <div class="container py-5">
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-4">
-          <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25 bg-white bg-opacity-10"
-            style="transition: 0.4s"
-            onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(0,212,255,0.15)'"
-            onmouseout="this.style.transform='none'; this.style.background='rgba(255,255,255,0.08)'"
-          >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-window"></i> Webpage Project (Activity 4)
-            </h3>
-            <p class="small mb-2">
-              A website that showcases my desired gadget.
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ========================================
+           GLOBAL
+        ======================================== */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+
+        background:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(47, 176, 235, 0.1),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 35%,
+            rgba(89, 113, 255, 0.08),
+            transparent 35%
+          ),
+          #071321;
+
+        color: #f5f8fb;
+
+        font-family: "Inter", sans-serif;
+
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* ========================================
+           NAVIGATION
+        ======================================== */
+
+      .navbar-custom {
+        position: sticky;
+
+        top: 0;
+
+        z-index: 100;
+
+        height: 82px;
+
+        display: flex;
+
+        align-items: center;
+
+        background: rgba(5, 16, 29, 0.82);
+
+        backdrop-filter: blur(18px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-container {
+        width: min(1150px, 90%);
+
+        margin: auto;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+      }
+
+      .logo {
+        color: white;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+
+        font-size: 25px;
+
+        font-weight: 800;
+
+        letter-spacing: -0.07em;
+      }
+
+      .logo span {
+        color: #66d9ff;
+      }
+
+      .nav-links {
+        display: flex;
+
+        align-items: center;
+
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: #aebdca;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        transition: 0.25s ease;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      .nav-button {
+        padding: 13px 22px;
+
+        border-radius: 50px;
+
+        color: #06121e !important;
+
+        background: linear-gradient(135deg, #5de0ff, #75aaff);
+
+        box-shadow: 0 10px 30px rgba(72, 195, 255, 0.2);
+      }
+
+      /* ========================================
+           HERO
+        ======================================== */
+
+      .projects-hero {
+        width: min(1150px, 90%);
+
+        margin: auto;
+
+        padding: 110px 0 80px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 10px 15px;
+
+        border-radius: 50px;
+
+        border: 1px solid rgba(91, 215, 255, 0.3);
+
+        background: rgba(60, 180, 230, 0.08);
+
+        color: #87e4ff;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        margin-bottom: 25px;
+      }
+
+      .projects-hero h1 {
+        max-width: 950px;
+
+        margin: 0;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+
+        font-size: clamp(4rem, 8vw, 8rem);
+
+        line-height: 0.88;
+
+        letter-spacing: -0.085em;
+
+        font-weight: 800;
+      }
+
+      .gradient {
+        background: linear-gradient(100deg, #79e5ff, #8aa9ff);
+
+        -webkit-background-clip: text;
+
+        background-clip: text;
+
+        color: transparent;
+      }
+
+      .hero-description {
+        max-width: 680px;
+
+        margin-top: 35px;
+
+        color: #aab9c6;
+
+        font-size: 17px;
+
+        line-height: 1.8;
+      }
+
+      /* ========================================
+           PROJECT SECTION
+        ======================================== */
+
+      .projects-section {
+        width: min(1150px, 90%);
+
+        margin: auto;
+
+        padding: 50px 0 110px;
+      }
+
+      .section-label {
+        color: #6fdcff;
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+        letter-spacing: 0.18em;
+
+        text-transform: uppercase;
+
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        max-width: 850px;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+
+        font-size: clamp(2.7rem, 5vw, 5.5rem);
+
+        line-height: 0.96;
+
+        letter-spacing: -0.075em;
+
+        margin: 0;
+
+        font-weight: 800;
+      }
+
+      /* ========================================
+           PROJECT GRID
+        ======================================== */
+
+      .project-grid {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 22px;
+
+        margin-top: 60px;
+      }
+
+      /* ========================================
+           PROJECT CARD
+        ======================================== */
+
+      .project-card {
+        position: relative;
+
+        overflow: hidden;
+
+        min-height: 520px;
+
+        border-radius: 25px;
+
+        border: 1px solid rgba(255, 255, 255, 0.09);
+
+        background: rgba(255, 255, 255, 0.025);
+
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+
+        border-color: rgba(105, 220, 255, 0.3);
+      }
+
+      /* ========================================
+           PROJECT IMAGE
+        ======================================== */
+
+      .project-image {
+        position: relative;
+
+        width: 100%;
+
+        height: 290px;
+
+        overflow: hidden;
+
+        background: #102131;
+      }
+
+      .project-image img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+
+        transition: transform 0.6s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.06);
+      }
+
+      /* IMAGE OVERLAY */
+
+      .project-image::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background: linear-gradient(
+          to bottom,
+          transparent 50%,
+          rgba(7, 19, 33, 0.85)
+        );
+      }
+
+      /* ========================================
+           PROJECT CONTENT
+        ======================================== */
+
+      .project-content {
+        padding: 32px;
+      }
+
+      .project-number {
+        color: #64ddff;
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+        letter-spacing: 0.16em;
+
+        text-transform: uppercase;
+
+        margin-bottom: 13px;
+      }
+
+      .project-content h2 {
+        margin: 0;
+
+        color: white;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+
+        font-size: 28px;
+
+        line-height: 1.1;
+
+        letter-spacing: -0.05em;
+      }
+
+      .project-content p {
+        color: #91a3b1;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+
+        margin: 15px 0 25px;
+      }
+
+      /* ========================================
+           PROJECT TAGS
+        ======================================== */
+
+      .project-tags {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 7px;
+
+        margin-bottom: 25px;
+      }
+
+      .project-tag {
+        padding: 7px 11px;
+
+        border-radius: 50px;
+
+        color: #a9bbc7;
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        background: rgba(255, 255, 255, 0.03);
+
+        font-size: 11px;
+
+        font-weight: 600;
+      }
+
+      /* ========================================
+           BUTTON
+        ======================================== */
+
+      .project-button {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding: 12px 18px;
+
+        border-radius: 50px;
+
+        color: #dff9ff;
+
+        border: 1px solid rgba(99, 218, 255, 0.3);
+
+        background: rgba(73, 193, 239, 0.07);
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        transition: 0.25s ease;
+      }
+
+      .project-button:hover {
+        color: #06121e;
+
+        background: #68ddff;
+
+        border-color: #68ddff;
+      }
+
+      /* ========================================
+           GITHUB SECTION
+        ======================================== */
+
+      .github-section {
+        margin-top: 80px;
+
+        padding: 50px;
+
+        border-radius: 25px;
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.035),
+          rgba(75, 160, 230, 0.035)
+        );
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 30px;
+      }
+
+      .github-section h2 {
+        margin: 0;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+
+        font-size: 30px;
+
+        letter-spacing: -0.05em;
+      }
+
+      .github-section p {
+        color: #8fa2b0;
+
+        margin: 10px 0 0;
+
+        font-size: 14px;
+      }
+
+      .github-button {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        white-space: nowrap;
+
+        padding: 14px 21px;
+
+        border-radius: 50px;
+
+        color: #06121e;
+
+        background: linear-gradient(135deg, #65dcff, #79a8ff);
+
+        font-weight: 800;
+
+        font-size: 13px;
+
+        transition: 0.3s ease;
+      }
+
+      .github-button:hover {
+        color: #06121e;
+
+        transform: translateY(-3px);
+
+        box-shadow: 0 15px 35px rgba(78, 202, 255, 0.2);
+      }
+
+      /* ========================================
+           CTA
+        ======================================== */
+
+      .cta {
+        width: min(1150px, 90%);
+
+        margin: 20px auto 100px;
+
+        padding: 80px 60px;
+
+        border-radius: 30px;
+
+        background: linear-gradient(
+          135deg,
+          rgba(66, 182, 237, 0.12),
+          rgba(84, 105, 255, 0.08)
+        );
+
+        border: 1px solid rgba(108, 220, 255, 0.16);
+
+        text-align: center;
+      }
+
+      .cta h2 {
+        max-width: 800px;
+
+        margin: auto;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+
+        font-size: clamp(2.7rem, 6vw, 5.8rem);
+
+        line-height: 0.95;
+
+        letter-spacing: -0.08em;
+      }
+
+      .cta p {
+        max-width: 550px;
+
+        margin: 25px auto;
+
+        color: #9fb1bf;
+
+        line-height: 1.7;
+      }
+
+      .primary-btn {
+        display: inline-block;
+
+        padding: 15px 24px;
+
+        border-radius: 50px;
+
+        color: #06121e;
+
+        background: linear-gradient(135deg, #62ddff, #73a8ff);
+
+        font-weight: 800;
+
+        transition: 0.3s ease;
+      }
+
+      .primary-btn:hover {
+        color: #06121e;
+
+        transform: translateY(-3px);
+
+        box-shadow: 0 15px 35px rgba(78, 202, 255, 0.22);
+      }
+
+      /* ========================================
+           FOOTER
+        ======================================== */
+
+      footer {
+        width: min(1150px, 90%);
+
+        margin: auto;
+
+        padding: 30px 0 45px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+        color: #718392;
+
+        font-size: 12px;
+      }
+
+      footer a {
+        color: #8fdfff;
+      }
+
+      /* ========================================
+           MOBILE
+        ======================================== */
+
+      @media (max-width: 900px) {
+        .nav-links {
+          gap: 15px;
+        }
+
+        .nav-links a:not(.nav-button) {
+          display: none;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .github-section {
+          flex-direction: column;
+
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .navbar-custom {
+          height: 70px;
+        }
+
+        .projects-hero {
+          padding: 75px 0 65px;
+        }
+
+        .projects-hero h1 {
+          font-size: clamp(3.5rem, 17vw, 5rem);
+        }
+
+        .hero-description {
+          font-size: 14px;
+        }
+
+        .projects-section {
+          padding: 40px 0 80px;
+        }
+
+        .project-card {
+          min-height: auto;
+        }
+
+        .project-image {
+          height: 240px;
+        }
+
+        .project-content {
+          padding: 27px;
+        }
+
+        .github-section {
+          padding: 30px;
+        }
+
+        .cta {
+          padding: 60px 25px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ========================================
+     NAVIGATION
+======================================== -->
+
+    <nav class="navbar-custom">
+      <div class="nav-container">
+        <a href="index.html" class="logo"> Allen<span>.</span> </a>
+
+        <div class="nav-links">
+          <a href="index.html"> Home </a>
+
+          <a href="about.html"> About </a>
+
+          <a href="activities.html"> Activities </a>
+
+          <a href="skills.html"> Skills </a>
+
+          <a href="blog.html"> Blog </a>
+
+          <a href="contact.html" class="nav-button"> Let's Work Together </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================================
+     HERO
+======================================== -->
+
+    <section class="projects-hero">
+      <div class="eyebrow">
+        <i class="bi bi-grid-1x2"></i>
+
+        Selected Work
+      </div>
+
+      <h1>
+        Things I've
+        <span class="gradient"> built. </span>
+      </h1>
+
+      <p class="hero-description">
+        A collection of web development projects, school activities,
+        experiments, and digital experiences I've created while developing my
+        technical skills.
+      </p>
+    </section>
+
+    <!-- ========================================
+     PROJECTS
+======================================== -->
+
+    <section class="projects-section">
+      <div class="section-label">01 — Projects</div>
+
+      <h2 class="section-title">Recent work &amp; activities.</h2>
+
+      <div class="project-grid">
+        <!-- ==================================
+             PROJECT 01
+        ================================== -->
+
+        <article class="project-card">
+          <div class="project-image">
+            <img
+              src="iphone.jpg"
+              alt="Webpage project showcasing a desired gadget"
+            />
+          </div>
+
+          <div class="project-content">
+            <div class="project-number">Activity 04</div>
+
+            <h2>Webpage Project</h2>
+
+            <p>
+              A product-focused webpage created to showcase a desired gadget
+              while practicing layout, visual hierarchy, responsive design, and
+              web development.
             </p>
+
+            <div class="project-tags">
+              <span class="project-tag"> HTML </span>
+
+              <span class="project-tag"> CSS </span>
+
+              <span class="project-tag"> Bootstrap </span>
+
+              <span class="project-tag"> Responsive Design </span>
+            </div>
+
             <a
               href="https://allen04-rianzares.github.io/Allen04-Rianzares.github/"
               target="_blank"
-              class="btn btn-outline-light rounded-pill mt-2"
-              >View Project</a
+              rel="noopener"
+              class="project-button"
             >
-          </div>
-        </div>
+              View Project
 
-        <div class="col-md-6 col-lg-4">
-          <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25 bg-white bg-opacity-10"
-            style="transition: 0.4s"
-            onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(0,212,255,0.15)'"
-            onmouseout="this.style.transform='none'; this.style.background='rgba(255,255,255,0.08)'"
-          >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-globe"></i> Biodome Project (Activity 5)
-            </h3>
-            <p class="small mb-2">
-              This website about a place in the world you would like to showcase
-              (City, Park, Museum, etc)
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ==================================
+             PROJECT 02
+        ================================== -->
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="biodome.jpg" alt="Biodome website project" />
+          </div>
+
+          <div class="project-content">
+            <div class="project-number">Activity 05</div>
+
+            <h2>Biodome Project</h2>
+
+            <p>
+              A destination-focused website created to showcase a place in the
+              world. The project focuses on presentation, visual storytelling,
+              and webpage design.
             </p>
+
+            <div class="project-tags">
+              <span class="project-tag"> HTML </span>
+
+              <span class="project-tag"> CSS </span>
+
+              <span class="project-tag"> Web Design </span>
+
+              <span class="project-tag"> UI Design </span>
+            </div>
+
             <a
               href="https://allen04-rianzares.github.io/Biodome/"
               target="_blank"
-              class="btn btn-outline-light rounded-pill mt-2"
-              >View Project</a
+              rel="noopener"
+              class="project-button"
             >
-          </div>
-        </div>
+              View Project
 
-        <div class="col-md-6 col-lg-4">
-          <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25 bg-white bg-opacity-10"
-            style="transition: 0.4s"
-            onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(0,212,255,0.15)'"
-            onmouseout="this.style.transform='none'; this.style.background='rgba(255,255,255,0.08)'"
-          >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-globe"></i> Gallery Project (Activity 6)
-            </h3>
-            <p class="small mb-2">
-              This website about the endemic and beautiful snakes of the
-              Philippines, and also awareness for identifying its venom and
-              characteristics
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ==================================
+             PROJECT 03
+        ================================== -->
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="snake.jpg" alt="Philippine snakes awareness website" />
+          </div>
+
+          <div class="project-content">
+            <div class="project-number">Activity 06</div>
+
+            <h2>Philippine Snakes Gallery</h2>
+
+            <p>
+              An educational gallery website focused on endemic and beautiful
+              snakes of the Philippines, including information about venom and
+              characteristics.
             </p>
+
+            <div class="project-tags">
+              <span class="project-tag"> HTML </span>
+
+              <span class="project-tag"> CSS </span>
+
+              <span class="project-tag"> Gallery </span>
+
+              <span class="project-tag"> Educational </span>
+            </div>
+
             <a
               href="https://allen04-rianzares.github.io/Activity_6/"
               target="_blank"
-              class="btn btn-outline-light rounded-pill mt-2"
-              >View Project</a
+              rel="noopener"
+              class="project-button"
             >
-          </div>
-        </div>
+              View Project
 
-        <div class="col-md-6 col-lg-4">
-          <div
-            class="p-4 text-center rounded-4 h-100 border border-light border-opacity-25 bg-white bg-opacity-10"
-            style="transition: 0.4s"
-            onmouseover="this.style.transform='translateY(-8px)'; this.style.background='rgba(0,212,255,0.15)'"
-            onmouseout="this.style.transform='none'; this.style.background='rgba(255,255,255,0.08)'"
-          >
-            <h3 class="text-info mb-2">
-              <i class="bi bi-globe"></i> API Gallery (Activity 7)
-            </h3>
-            <p class="small mb-2">
-              This website is about my Favorite Anime showing different
-              characters from the show.
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ==================================
+             PROJECT 04
+        ================================== -->
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="dragonball.png" alt="Dragon Ball API gallery project" />
+          </div>
+
+          <div class="project-content">
+            <div class="project-number">Activity 07</div>
+
+            <h2>Anime API Gallery</h2>
+
+            <p>
+              An interactive website built around an anime API, presenting
+              different characters from the show in a dynamic gallery
+              experience.
             </p>
+
+            <div class="project-tags">
+              <span class="project-tag"> JavaScript </span>
+
+              <span class="project-tag"> API </span>
+
+              <span class="project-tag"> Bootstrap </span>
+
+              <span class="project-tag"> Interactive </span>
+            </div>
+
             <a
               href="https://allen04-rianzares.github.io/Activity_7-API-/"
               target="_blank"
-              class="btn btn-outline-light rounded-pill mt-2"
+              rel="noopener"
+              class="project-button"
             >
               View Project
+
+              <i class="bi bi-arrow-up-right"></i>
             </a>
           </div>
+        </article>
+      </div>
+
+      <!-- ====================================
+         GITHUB
+    ==================================== -->
+
+      <div class="github-section">
+        <div>
+          <h2>More projects on GitHub.</h2>
+
+          <p>Explore more of my code, experiments, and development work.</p>
         </div>
 
-        
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="index.html" class="btn btn-outline-light"
-          ><i class="bi bi-arrow-left"></i> Back to Home</a
+        <a
+          href="https://github.com/Allen04-Rianzares"
+          target="_blank"
+          rel="noopener"
+          class="github-button"
         >
-      </div>
-    </div>
+          <i class="bi bi-github"></i>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+          Visit My GitHub
+
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================
+     CTA
+======================================== -->
+
+    <section class="cta">
+      <h2>Have a project in mind?</h2>
+
+      <p>
+        I'm interested in opportunities where I can combine technical skills,
+        creative thinking, and reliable support.
+      </p>
+
+      <a href="contact.html" class="primary-btn"> Let's Work Together </a>
+    </section>
+
+    <!-- ========================================
+     FOOTER
+======================================== -->
+
+    <footer>
+      <div>© 2026 Allen Rianzares. All rights reserved.</div>
+
+      <div>
+        <a
+          href="https://github.com/Allen04-Rianzares"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        &nbsp; · &nbsp;
+
+        <a href="mailto:allencurucho@gmail.com"> Email </a>
+      </div>
+    </footer>
   </body>
 </html>
